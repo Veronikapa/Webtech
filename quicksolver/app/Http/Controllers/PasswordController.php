@@ -1,6 +1,6 @@
 <?php
 
-namespace quicksolver\Http\Controllers\Auth;
+namespace quicksolver\Http\Controllers;
 
 use quicksolver\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;

@@ -1,31 +1,40 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
+/**
+ * Route definitions
+ * @author Veronika Pachatz based on http://bensmith.io/email-verification-with-laravel
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [
+    'as' => 'home',
+    'uses' => 'PagesController@home'
+]);
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
-
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+ * Registration
+ */
+Route::get('register', [
+    'as' => 'register_path',
+    'uses' => 'RegistrationController@create'
+]);
+Route::post('register', [
+    'as' => 'register_path',
+    'uses' => 'RegistrationController@store'
+]);
+Route::get('register/verify/{confirmationCode}', [
+    'as' => 'confirmation_path',
+    'uses' => 'RegistrationController@confirm'
+]);
+/*
+ * Sessions
+ */
+Route::get('login', [
+    'as' => 'login_path',
+    'uses' => 'SessionsController@create'
+]);
+Route::post('login', [
+    'as' => 'login_path',
+    'uses' => 'SessionsController@store'
+]);
+Route::get('logout', [
+    'as' => 'logout_path',
+    'uses' => 'SessionsController@destroy',
+]);
