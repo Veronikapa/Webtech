@@ -1,6 +1,13 @@
-
+/**
+* css for adaptions on bootstrap template
+*/
 body {
-    padding-top: 70px; }
+    background-image: url("polaroid.png");
+    background-repeat: repeat;
+    margin-top: 70px;
+}
 
-.container h1:first-of-type {
-    margin-top: 0px; }
+body .home
+{
+    text-align: center;
+}

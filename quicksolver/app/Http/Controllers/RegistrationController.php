@@ -25,7 +25,7 @@ class RegistrationController extends Controller {
      */
     public function create()
     {
-        return View::make('registration');
+        return View::make('pages.registration');
     }
 
     /**
@@ -70,7 +70,7 @@ class RegistrationController extends Controller {
         /*
          * Mail based on view 'registrationmail' including the confirmation code will be sent to user
          */
-        Mail::send('registrationmail', compact('confirmation_code'), function($message)
+        Mail::send('pages.registrationmail', compact('confirmation_code'), function($message)
         {
             $message->to(Input::get('email'))->subject('Confirm your Quicksolver account!');
         });

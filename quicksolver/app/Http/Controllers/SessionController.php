@@ -1,17 +1,22 @@
 <?php
 
 namespace quicksolver\Http\Controllers;
+
+use Illuminate\Support\Facades\Input;
+use Validator, Redirect;
+use View, Hash, Mail;
+use Illuminate\Support\Facades\Auth;
 /**
  * Controller for user session
  * @author: Veronika Pachatz based on http://bensmith.io/email-verification-with-laravel
  */
 
-class SessionsController extends \Controller {
+class SessionsController extends Controller {
 
     public function __construct()
     {
-        $this->beforeFilter('guest', ['except' => ['destroy']]);
-        $this->beforeFilter('auth', ['only' => ['destroy']]);
+        /*$this->beforeFilter('guest', ['except' => ['destroy']]);
+        $this->beforeFilter('auth', ['only' => ['destroy']]);*/
     }
     /**
      * Show the login form.
@@ -21,7 +26,7 @@ class SessionsController extends \Controller {
      */
     public function create()
     {
-        return View::make('sessions.create');
+        return View::make('pages.login');
     }
     /**
      * Attempt to log a user in
@@ -60,7 +65,7 @@ class SessionsController extends \Controller {
             return Redirect::back()->withInput()->withErrors(['credentials' => 'Sorry, we were unable to sign you in.']);
         }
 
-        Flash::message('Welcome back!');
+        //Flash::message('Welcome back!');
         return Redirect::home();
     }
     /**

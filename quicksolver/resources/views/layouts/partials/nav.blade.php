@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Veronika
- * Date: 05.01.2016
- * Time: 14:02
+ * html of navigation bar layout
+ * @author vpachatz
  */
 ?>
 <nav class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
@@ -15,14 +13,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            {{ link_to_route('home', 'Email Verfication', [], ['class' => 'navbar-brand']) }}
+            {{ link_to_route('home', 'Quicksolver', [], ['class' => 'navbar-brand']) }}
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-            </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(Auth::user())
                     <li class="dropdown">
@@ -32,8 +26,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">My last actions</a></li>
                             <li class="divider"></li>
                             <li>{{ link_to_route('logout_path', 'Sign Out') }}</li>
                         </ul>

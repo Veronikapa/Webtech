@@ -13,6 +13,6 @@ class PagesController extends Controller {
 
     public function home()
     {
-        return View::make('home');
+        return View::make('pages.home');
     }
 }

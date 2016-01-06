@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => quicksolver\User::class,
+            'model' => quicksolver\Models\User::class,
         ],
 
         // 'users' => [
