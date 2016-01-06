@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => quicksolver\User::class,
+        'model'  => User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

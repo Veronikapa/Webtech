@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Laravel config file for mail sending
+ * @Author: basic Laravel default construct changed for mailgun by vpachatz
+ */
 return [
 
     /*
@@ -15,7 +18,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mailgun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +31,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.sendgrid.net'),
+    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +44,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 465),
+    'port' => env('MAIL_PORT', 587),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +57,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'quicksolvernoreply@gmail.com', 'name' => 'Quicksolver'],
+    'from' => ['address' => 'postmaster@sandbox20ba29e32de64cfb803c4f76fe64d44e.mailgun.org', 'name' => 'Quicksolver'],
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +70,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
+    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +83,7 @@ return [
     |
     */
 
-    'username' => env('quicksolvernoreply'),
+    'username' => env('postmaster@sandbox20ba29e32de64cfb803c4f76fe64d44e.mailgun.org'),
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +96,7 @@ return [
     |
     */
 
-    'password' => env('quicksolver2016'),
+    'password' => env('d4030e37ddcdacf7ed7faa87d9fd3e15'),
 
     /*
     |--------------------------------------------------------------------------

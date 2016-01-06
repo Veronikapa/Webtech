@@ -11,7 +11,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 /**
  * Class User (Model)
  * @package quicksolver
- * @author Veronika Pachatz
+ * @author Veronika Pachatz based on
  */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
@@ -19,19 +19,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     /**
      * The database table used by the model.
      *
-     * @var string
+     * @var string tablename
      */
     protected $table = 'users';
     /**
      * The attributes that can be mass-assigned to
      *
-     * @var array
+     * @var array of fillable user fields
      */
     protected $fillable = ['username', 'email', 'password', 'confirmation_code'];
     /**
      * The attributes excluded from the model's JSON form.
      *
-     * @var array
+     * @var array of hidden user fields
      */
     protected $hidden = array('password', 'remember_token');
 }

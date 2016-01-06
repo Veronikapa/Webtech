@@ -1,16 +1,14 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Veronika
- * Date: 05.01.2016
- * Time: 14:00
+ * Basic page layout
+ * @author vpachatz
  */
 ?>
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Email Verification Demo Application</title>
+    <title>Quicksolver - The fast program execution webpage</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css"/>

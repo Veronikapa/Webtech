@@ -1,0 +1,11 @@
+------------------------------------
+Gmail
+------------------------------------
+user: quicksolvernoreply@gmail.com
+pw: quicksolver2016
+
+---------------------------------------
+Mailgun
+---------------------------------------
+user: quicksolvernoreply@gmail.com
+pw: mailgunquick2016
