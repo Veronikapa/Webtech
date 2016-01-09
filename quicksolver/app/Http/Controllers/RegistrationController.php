@@ -4,20 +4,13 @@ namespace quicksolver\Http\Controllers;
 use Illuminate\Support\Facades\Input;
 use quicksolver\Models\User;
 use Validator, Redirect;
-use View, Hash, Mail;
+use View, Hash, Mail, Session;
 
 /**
  * Controller for user registration
  * @author vpachatz based on http://bensmith.io/email-verification-with-laravel
- * @todo vpachatz: check flash messages and add filter contruct
  */
 class RegistrationController extends Controller {
-
-    public function __construct()
-    {
-        //$this->beforeFilter('guest');
-    }
-
     /**
      * Show the view 'registration'
      *
@@ -51,7 +44,7 @@ class RegistrationController extends Controller {
         $validator = Validator::make(Input::only('username', 'email', 'password', 'password_confirmation'), $rules);
         if($validator->fails())
         {
-            return Redirect::back()->withInput()->withErrors($validator);
+            return Redirect::back()->withErrors($validator);
         }
 
         // Confirmation code is a random value
@@ -78,7 +71,8 @@ class RegistrationController extends Controller {
         /*
          * Redirect user to home - page and show flash message for information
          */
-        return Redirect::home();//->flash('Thanks for signing up to Quicksolver!'. 'Please check your mails and follow the instructions to complete the sign up procedure');
+        Session::flash('message', 'Thanks for signing up to Quicksolver! Please check your mails and follow the instructions to complete the sign up procedure');
+        return Redirect::home();
     }
 
     /**
@@ -115,6 +109,7 @@ class RegistrationController extends Controller {
         $user->save();
 
         // Login page will be displayed after successful confirmation
-        return Redirect::route('login_path');//->flash('Success','You have successfully verified your account. You can now login into Quicksolver.');
+        Session::flash('message','You have successfully verified your account. You can now login into Quicksolver!');
+        return Redirect::route('login_path');
     }
 }

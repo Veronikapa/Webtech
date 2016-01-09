@@ -1,17 +1,18 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Veronika
- * Date: 05.01.2016
- * Time: 14:04
+ * Registration form
+ * @author vpachatz based on http://bensmith.io/email-verification-with-laravel
  */
  ?>
+
 @extends('layouts.default')
 
 @section('content')
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <h1>Register</h1>
+            <h1>Create new account</h1>
+
+            @include('layouts.partials.errors')
 
             {{ Form::open(['route' => 'register_path']) }}
                     <!--- Username Field --->

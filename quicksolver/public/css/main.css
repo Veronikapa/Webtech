@@ -1,13 +1,37 @@
 /**
 * css for adaptions on bootstrap template
+* @author: vpachatz
 */
 body {
-    background-image: url("polaroid.png");
-    background-repeat: repeat;
-    margin-top: 70px;
+    background: url("gray_jean.png") repeat;
+    margin-top: 5%;
 }
 
-body .home
+body .welcomeMain
 {
     text-align: center;
+    background-image: url("backgroundMain.png");
+    margin-top: -2%;
+    width: 100%;
+    height: 45%;
+    position: fixed;
+    left: 0;
+    z-index: -2000;
+
+}
+body .welcomeText
+{
+    text-align: center;
+    margin-top: -2%;
+    position: absolute;
+    top: 60%;
+    left: 20%;
+    right: 20%;
+}
+
+body .mailContentTable {
+    background: url('gray_jean.png') repeat-y center center;
+    margin: 0;
+    padding: 0;
+
 }

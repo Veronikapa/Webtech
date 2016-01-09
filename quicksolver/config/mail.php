@@ -57,7 +57,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'postmaster@sandbox20ba29e32de64cfb803c4f76fe64d44e.mailgun.org', 'name' => 'Quicksolver'],
+    'from' => ['address' => 'postmaster@quicksolver.at', 'name' => 'Quicksolver'],
 
     /*
     |--------------------------------------------------------------------------

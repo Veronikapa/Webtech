@@ -25,16 +25,17 @@
                             {{ Auth::user()->username }}<span class="caret"></span>
                         </a>
 
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">My last actions</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
                             <li class="divider"></li>
-                            <li>{{ link_to_route('logout_path', 'Sign Out') }}</li>
+                            <li>{{ link_to_route('logout_path', 'Logout') }}</li>
                         </ul>
 
                     </li>
                 @else
-                    <li>{{ link_to_route('register_path', 'Register') }}</li>
-                    <li>{{ link_to_route('login_path', 'Log In') }}</li>
+                    <li>{{ link_to_route('register_path', 'Sign Up') }}</li>
+                    <li>{{ link_to_route('login_path', 'Login') }}</li>
                 @endif
             </ul>
         </div>

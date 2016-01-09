@@ -11,7 +11,8 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
 
-            <h1>Sign In!</h1>
+            <h1>Login</h1>
+            @include('layouts.partials.errors')
 
             {{ Form::open(['route' => 'login_path']) }}
 
@@ -27,7 +28,7 @@
             </div>
             <!--- Sign In Field --->
             <div class="form-group">
-                {{ Form::submit('Sign In', ['class' => 'btn btn-primary']) }}
+                {{ Form::submit('Login', ['class' => 'btn btn-primary']) }}
             </div>
             {{ Form::close() }}
         </div>

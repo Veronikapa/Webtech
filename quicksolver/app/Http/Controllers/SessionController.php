@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Auth;
 
 class SessionsController extends Controller {
 
-    public function __construct()
-    {
-        /*$this->beforeFilter('guest', ['except' => ['destroy']]);
-        $this->beforeFilter('auth', ['only' => ['destroy']]);*/
-    }
     /**
      * Show the login form.
      * GET /sessions/create
@@ -48,7 +43,7 @@ class SessionsController extends Controller {
 
         if($validator->fails())
         {
-            return Redirect::back()->withInput()->withErrors($validator);
+            return Redirect::back()->withErrors($validator);
         }
 
         $credentials = [
@@ -62,10 +57,9 @@ class SessionsController extends Controller {
          */
         if (! Auth::attempt($credentials))
         {
-            return Redirect::back()->withInput()->withErrors(['credentials' => 'Sorry, we were unable to sign you in.']);
+            return Redirect::back()->withInput()->withErrors(['credentials' => 'Sorry, we were unable to sign you in. Please ensure that your account exists and is confirmed!']);
         }
 
-        //Flash::message('Welcome back!');
         return Redirect::home();
     }
     /**
